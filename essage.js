@@ -45,7 +45,7 @@
         return clearInterval(interval);
       }
       el.style.top = (top += 1) + 'px';
-    }, 10);
+    }, 3);
 
     return this;
   };
@@ -59,7 +59,7 @@
     interval = setInterval(function() {
       if(top === dest) return interval && clearInterval(interval);
       self.el.style.top = (top -= 1) + 'px';
-    }, 10);
+    }, 3);
     return this;
   }
 
