@@ -1,4 +1,4 @@
-/* Essage - an elegant way to display tips/message
+/* Essage - elegant way to display tips/message
  * https://github.com/sofish/Essage
  */
 ~function(win, doc) {
@@ -16,7 +16,7 @@
   };
 
   Essage.prototype._height = function() {
-    return this.el.offsetHeight;
+    return this.el.offsetHeight || this.el.clientHeight;
   };
 
   Essage.prototype.show = function(message, duration) {
@@ -27,7 +27,7 @@
     el.innerHTML = message;
 
     // first apply
-    if(!el.parentNode) doc.body.appendChild(el);
+    if(!el.parentNode || (el.parentNode.nodeName !== 'BODY')) doc.body.appendChild(el);
 
     var top = -this._height();
 
@@ -44,8 +44,6 @@
         self._timeout = timeout && timeout();
         return clearInterval(interval);
       }
-      console.log(3);
-
       el.style.top = (top += 1) + 'px';
     }, 10);
 
