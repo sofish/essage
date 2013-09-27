@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Essage - elegant way to display tips/message</title>
+  <style type="text/css">
+  *{padding:0;margin:0;}
+  body{font:100 1em/1.8 Kozuka Gothic Pr6N EL, georgia, serif;color:#666;margin:8% 0;}
+  pre.prettyprint{font:100 14px/1.2 courier, "courier new", monospace;border:1px solid #ebebeb;border-color:#eee #eee #ccc #eee;background:#fff;padding:30px 5%;width:50%;white-space:pre-wrap;margin:2em auto;}
+  @media all and (max-width:800px){ pre.prettyprint{padding:20px 10%;width:80%;border-width:1px 0;border-top-color:#ddd;} }
+  h1{font-weight:100; text-align:center;font-size:20px;}
+  #title, #actions{margin-bottom:1.5em;text-align:center;}
+  #actions span{display:inline-block;padding:2px 20px;background:#5fb16f;color:#fff;cursor:pointer;border-radius:4px;box-shadow:0 2px 0 #4b8c58;-moz-user-select: none;-webkit-user-select: none;-ms-user-select: none;margin-bottom:10px;}
+  #actions span:hover{background:#6ccd7f;}
+  #actions span:active{background:#4e9254;box-shadow:0 2px 0 #080;}
+
+  .pln{color:#000}
+  @media screen{
+    .str{color:#e67e22;}
+    .kwd{color:#3498db}
+    .com{color:#aaa}
+    .typ{color:#1abc9c;font-weight:900;}
+    .lit{color:#066}
+    .pun, .opn, .clo{color:#660}
+    .tag{color:#008}
+    .atn{color:#1abc9c}
+    .atv{color:#2ecc71}
+    .dec, .var{color:#1abc9c;}
+    .fun{color:red}
+  }
+  </style>
+  <link rel="stylesheet" href="essage.css"/>
+</head>
+<body>
+<h1 id="title"><strong>Essage</strong> - elegant way to display tips/message</h1>
+<pre class="prettyprint lang-js">
+// show tips
+Essage.show('hello, im a message.');
+
+// hide tips
+Essage.hide();
+
+// hide automaticlly after 2000
+Essage.show('message', 2000);
+
+// change container class
+Essage.setClass('classname');
+
+// chain methods
+Essage.setClass('hello').show('im a message')
+</pre>
+
+<div id="actions">
+  <span id="show">show</span>
+  <span id="auto">show and hide automaticly</span>
+  <span id="showwithclass">show with new class</span>
+  <span id="hide">hide</span>
+</div>
+
+<script src="essage.js"></script>
+<script>
+  var $ = function(id) { return document.getElementById(id) }
+    , $show = $('show')
+    , $hide = $('hide')
+    , $showwithclass = $('showwithclass')
+    , $auto = $('auto')
+
+  $show.onclick = function() {
+    Essage.show('hello, im a message.');
+  };
+
+  $auto.onclick = function() {
+    Essage.show('the message will automaticlly disppear after 2 seconds...', 2000);
+  };
+
+  $showwithclass.onclick = function() {
+    Essage.setClass('essage-success').show('o:, classname is changed.');
+  };
+
+  $hide.onclick = function() {
+    Essage.hide();
+  };
+</script>
+
+<!-- ignore me, syntax highlight -->
+<script src="http://cdn.staticfile.org/prettify/r298/prettify.min.js"></script>
+<script>window.prettyPrint && prettyPrint();</script>
+</body>
+</html>
