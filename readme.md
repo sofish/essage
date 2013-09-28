@@ -22,8 +22,10 @@ Place the js/css file on you page, and use the `Essage` object to manage your me
 
 2.1 **show(message, timeout)** show message
 
+_NOTE_: The argument `message` can be a html string.
+
 ```js
-Essage.show('hello, im a message.');
+Essage.show('<b>hello</b>, im a message.');
 ```
 
 if `timeout` {Number} is specific, the message will hide automaticlly after `timeout` (ms).
