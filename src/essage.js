@@ -32,9 +32,7 @@
     this.el = doc.createElement('div');
     this.el.className = 'essage';
 
-    this.close = document.createElement('span');
-    this.close.className = 'close';
-    this.close.innerHTML = '×'
+    this.close = '<span class="close">&times;</span>';
 
     this.el.onclick = function(e) {
       var e = e || win.event
@@ -98,11 +96,7 @@
       , interval, timeout;
 
     // set message
-    el.innerHTML = this.config.message;
-    el.appendChild(this.close);
-
-    // IE6~8 bugfix: content disppear
-    this.close.innerHTML = '&times';
+    el.innerHTML = this.close + this.config.message;
 
     var top = -this._height();
 
