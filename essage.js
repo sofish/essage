@@ -28,7 +28,7 @@
   };
 
   Essage.prototype.setClass = function(classname) {
-    this.el.className = classname;
+    this.el.className = classname || 'essage';
     return this;
   };
 

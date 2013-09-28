@@ -71,7 +71,7 @@ Essage.setClass('hello').show('im a message')
     , $bottom = $('bottom');
 
   $show.onclick = function() {
-    Essage.show('hello, im a message.');
+    Essage.setClass().show('hello, im a message.');
   };
 
   $auto.onclick = function() {
@@ -79,7 +79,7 @@ Essage.setClass('hello').show('im a message')
   };
 
   $bottom.onclick = function() {
-    Essage.setPlacement('bottom').show('hi, hi, im here');
+    Essage.setPlacement('bottom').setClass('essage-error').show('hi, hi, im here');
   };
 
   $showwithclass.onclick = function() {
