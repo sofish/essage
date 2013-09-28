@@ -2,6 +2,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Essage - elegant way to display tips/message</title>
   <style type="text/css">
   *{padding:0;margin:0;}
@@ -10,11 +11,11 @@
   pre a{position:absolute;right:20px;top:15px;text-decoration:none;border-bottom:1px dotted #5fb16f;font-family:Georgia, serif;font-style:italic;}
   @media all and (max-width:800px){ pre.prettyprint{padding:20px 10%;width:80%;border-width:1px 0;border-top-color:#ddd;} }
   h1{font-weight:100;text-align:center;font-size:18px;}
-  #fork{position:fixed;position:_absolute;right:0;top:0;}
+  #fork{position:fixed;*position:absolute;right:0;top:0;}
   a img{border:none;}
   #title, #actions{margin-bottom:1.5em;text-align:center;}
-  #actions span{display:inline-block;padding:2px 20px;background:#5fb16f;color:#fff;cursor:pointer;border-radius:4px;box-shadow:0 2px 0 #4b8c58;-moz-user-select: none;-webkit-user-select: none;-ms-user-select: none;margin-bottom:10px;}
-  #actions span:hover{background:#6ccd7f;}
+  #actions span{display:inline-block;padding:0 20px;background:#666;color:#fff;cursor:pointer;border-radius:3px;box-shadow:0 2px 0 #555;-moz-user-select: none;-webkit-user-select: none;-ms-user-select: none;margin-bottom:10px;}
+  #actions span:hover{background:#6ccd7f;box-shadow:0 2px 0 #4e9254;}
   #actions span:active{background:#4e9254;box-shadow:0 2px 0 #080;}
 
   .pln{color:#000}
@@ -36,6 +37,7 @@
 </head>
 <body>
 <h1 id="title" class="com"><strong class="typ">Essage</strong> - elegant way to display tips/message</h1>
+
 <pre class="prettyprint lang-js">
 <a href="https://github.com/sofish/essage#readme" target="_blank">documentation &rarr;</a>
 // show message
@@ -64,7 +66,7 @@ Essage.show({
   <span id="show">show</span>
   <span id="auto">show & hide automaticlly</span>
   <span id="bottom">show at bottom</span>
-  <span id="status">show with status(className)</span>
+  <span id="status">show with status</span>
   <span id="hide">hide</span>
 </div>
 
