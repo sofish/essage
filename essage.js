@@ -1,5 +1,5 @@
-/* Essage - elegant way to display tips/message
- * https://github.com/sofish/Essage
+/* Essage - a more elegant way to show message
+ * https://github.com/sofish/essage
  */
 ~function(win, doc) {
 
