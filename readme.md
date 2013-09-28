@@ -5,7 +5,11 @@
 -------------------------
 
 - Live demo [http://sofish.github.io/essage/index.html](http://sofish.github.io/essage/index.html)
-- Browser support: tested under IE6+, Firefox, Chrome, Safari
+- Browser support: tested under IE6+, Firefox, Chrome, Safari, Mobile Safari
+
+-------------------------
+
+![72913732-3232-49d1-ac6b-cfcc8035cefd](https://f.cloud.github.com/assets/153183/1231987/9daee03c-287f-11e3-97e1-f8a66d425814.png)
 
 -------------------------
 
