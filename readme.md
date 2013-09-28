@@ -18,51 +18,44 @@ Place the js/css file on you page, and use the `Essage` object to manage your me
 <script src="essage.js"></script>
 ```
 
-### 2. API
+### 2. API: `show` or `hide`
 
-2.1 **show(message, timeout)** show message
+1. **show(message, timeout)** show message
 
-_NOTE_: The argument `message` can be a html string.
+ ```js
+ // The argument `message` can be html(string).
+ Essage.show('<b>hello</b>, im a message.');
+ ```
 
-```js
-Essage.show('<b>hello</b>, im a message.');
-```
+ **auto hide**: If `timeout` {Number} is specific, the message will hide automaticlly after `timeout` (ms).
 
-if `timeout` {Number} is specific, the message will hide automaticlly after `timeout` (ms).
+ ```js
+ // `timeout` should be a number
+ Essage.show('i willl hide automaticlly after 2 seconds', 2000);
+ ```
 
-```js
-// `timeout` should be a number
-Essage.show('i willl hide automaticlly after 2 seconds', 2000);
-```
+ **config**: And, the `message` can be an object:
 
-2.2 **hide()** hide message
+ ```js
+ var message = {
+   message: 'message body',
 
-```js
-Essage.hide();
-```
+   // add class `essage-success` to the container
+   // by default, there're 4 status: normal, warning, success, error
+   status: 'success',
 
-2.3 **setPlacement(placement)** change placement of the message
+   // the placement can be `top` or `bottom`, by default is `top`
+   placement: 'bottom'
+ };
 
-```js
-// by default, it's `top`, set the placement to `bottom`
-Essage.setPlacement('bottom').show('then, show the message');
-```
+ Essage.show(message, 3000);
+ ```
 
-2.4 **setClass(classname) ** change the container's classname
+2. **hide()** hide message
 
-```js
-// if you change the className, remember to modify `essage.css`
-Essage.setClass('essage-success');
-```
-
-2.5 **chain methods**
-
-```js
-// Method of `Essage` can be chained
-Essage.setPlacement('bottom')
-  .setClass('essage-error')
-  .show('message', 3000);
-```
+ ```js
+ Essage.hide();
+ ```
 
 ### 3. MIT licence
 

@@ -36,30 +36,33 @@
 <body>
 <h1 id="title" class="com"><strong class="typ">Essage</strong> - elegant way to display tips/message</h1>
 <pre class="prettyprint lang-js">
-// show tips
-Essage.show('hello, im a message.');
+// show message
+Essage.show('<b>hello</b>, im a message.');
 
-// hide tips
+// hide message
 Essage.hide();
-
-// message placement
-Essage.setPlacement('bottom');
-
-// change container class
-Essage.setClass('classname');
 
 // hide automaticlly after 2000
 Essage.show('message', 2000);
 
-// chain methods
-Essage.setClass('hello').show('im a message')
+// `message` can be an object (config)
+Essage.show({
+  message: 'message body',
+
+  // add class `essage-success` to the container
+  // by default, there're 4 status: normal, warning, success, error
+  status: 'success',
+
+  // the placement can be `top` or `bottom`, by default is `top`
+  placement: 'bottom'
+});
 </pre>
 
 <div id="actions">
   <span id="show">show</span>
-  <span id="auto">show and hide automaticlly</span>
+  <span id="auto">show & hide automaticlly</span>
   <span id="bottom">show at bottom</span>
-  <span id="showwithclass">show with new class</span>
+  <span id="status">show with status(className)</span>
   <span id="hide">hide</span>
 </div>
 
@@ -71,24 +74,34 @@ Essage.setClass('hello').show('im a message')
   var $ = function(id) { return document.getElementById(id) }
     , $show = $('show')
     , $hide = $('hide')
-    , $showwithclass = $('showwithclass')
+    , $status = $('status')
     , $auto = $('auto')
-    , $bottom = $('bottom');
+    , $bottom = $('bottom')
 
   $show.onclick = function() {
-    Essage.setClass().show('hello, im a message.');
+    Essage.show('hello, im a message.');
   };
 
   $auto.onclick = function() {
-    Essage.show('the message will automaticlly disppear after 2 seconds...', 2000);
+    Essage.show({
+      message: 'the message will automaticlly disppear after 2 seconds...',
+      status: 'warning'
+    }, 2000);
   };
 
   $bottom.onclick = function() {
-    Essage.setPlacement('bottom').setClass('essage-error').show('hi, hi, im here');
+    Essage.show({
+      message: 'hi, hi, im here',
+      placement: 'bottom',
+      status: 'error'
+    });
   };
 
-  $showwithclass.onclick = function() {
-    Essage.setClass('essage-success').setPlacement().show('o:, classname is changed.');
+  $status.onclick = function() {
+    Essage.show({
+      message: 'o:, classname is changed.',
+      status: 'success'
+    });
   };
 
   $hide.onclick = function() {
