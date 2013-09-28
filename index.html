@@ -5,8 +5,9 @@
   <title>Essage - elegant way to display tips/message</title>
   <style type="text/css">
   *{padding:0;margin:0;}
-  body{font:100 1em/1.8 Kozuka Gothic Pr6N EL, georgia, serif;color:#666;margin:8% 0;}
-  pre.prettyprint{font:100 14px/1.2 courier, "courier new", monospace;border:1px solid #ebebeb;border-color:#eee #eee #ccc #eee;background:#fff;padding:30px 5%;width:50%;white-space:pre-wrap;margin:2em auto;}
+  body{font:100 1em/1.8 Kozuka Gothic Pr6N EL, georgia, serif;color:#666;margin:6% 0;}
+  pre.prettyprint{position:relative;font:100 14px/1 courier, "courier new", monospace;border:1px solid #ebebeb;border-color:#eee #eee #ccc #eee;background:#fff;padding:30px 5%;width:50%;white-space:pre-wrap;margin:2em auto;}
+  pre a{position:absolute;right:20px;top:15px;text-decoration:none;border-bottom:1px dotted #5fb16f;font-family:Georgia, serif;font-style:italic;}
   @media all and (max-width:800px){ pre.prettyprint{padding:20px 10%;width:80%;border-width:1px 0;border-top-color:#ddd;} }
   h1{font-weight:100;text-align:center;font-size:18px;}
   #fork{position:fixed;position:_absolute;right:0;top:0;}
@@ -36,6 +37,7 @@
 <body>
 <h1 id="title" class="com"><strong class="typ">Essage</strong> - elegant way to display tips/message</h1>
 <pre class="prettyprint lang-js">
+<a href="https://github.com/sofish/essage#readme" target="_blank">documentation &rarr;</a>
 // show message
 Essage.show('<b>hello</b>, im a message.');
 
