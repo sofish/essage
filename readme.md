@@ -1,8 +1,13 @@
-# Essage
+#  Essage
 
 > a more elegant way to show message / tips.
 
-Live demo [http://sofish.github.io/essage/](http://sofish.github.io/essage/)
+-------------------------
+
+- Live demo [http://sofish.github.io/essage/](http://sofish.github.io/essage/)
+- Browser support: tested under IE6+, Firefox, Chrome, Safari
+
+-------------------------
 
 ### 1. installaion
 
