@@ -4,5 +4,5 @@
 .essage, .essage-success, .essage-error{font-size:14px;position:fixed;_position:absolute;z-index:1010;background:#fff;background:rgba(255,232557,255,0.8);color:#666;text-align:center;height:40px;line-height:40px;top:-41px;left:0;width:100%;border-bottom:1px solid #ddd;border-top:1px solid #ddd;}
 .essage-success{background:#eafbe3;background:rgba(221, 242, 210, 0.8);border-bottom-color:#bfd5a9;border-top-color:#bfd5a9;color:#5fb16f;}
 .essage-error{background:#f2e1e4;background:rgba(242, 225, 228, 0.8);border-bottom-color:#e0cdcd;border-top-color:#e0cdcd;color:#dc584b;}
-.essage .close, .essage-success .close, .essage-error .close{font:400 normal 20px/1 arial, sans-serif;float:right;line-height:40px;display:inline-block;margin-right:10px;color:#e74c3c;opacity:0.6;cursor:pointer;}
+.essage .close, .essage-success .close, .essage-error .close{font:400 normal 20px/1 arial, sans-serif;position:absolute;right:10px;top:10px;color:#e74c3c;opacity:0.6;cursor:pointer;}
 .essage .close:hover, .essage-success .close:hover,.essage-error .close:hover{opacity:1;}

@@ -11,7 +11,7 @@
 
     this.close = document.createElement('span');
     this.close.className = 'close';
-    this.close.innerHTML = '&times;'
+    this.close.innerHTML = '×'
 
     this.el.onclick = function(e) {
       var e = e || win.event
@@ -50,6 +50,7 @@
 
     el.innerHTML = message;
     el.appendChild(this.close);
+    this.close.innerHTML = '&times';
 
     var top = -this._height();
 
