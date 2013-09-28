@@ -8,6 +8,7 @@
 
     this.el = doc.createElement('div');
     this.el.className = 'essage';
+
     this.close = document.createElement('span');
     this.close.className = 'close';
     this.close.innerHTML = '&times;'
@@ -18,11 +19,23 @@
       if(target.className === 'close') self.hide();
     }
 
+    // placement of the message, by default is `top`
+    this.placement = 'top';
+
+    doc.body.appendChild(this.el);
+
     return this;
   };
 
   Essage.prototype.setClass = function(classname) {
     this.el.className = classname;
+    return this;
+  };
+
+  Essage.prototype.setPlacement = function(placement) {
+    this.placement = placement && placement.match(/^(?:top|bottom)$/) ? placement : 'top';
+    this.el.style[this.placement] = -this._height();
+    this.el.style[this.placement === 'top' ? 'bottom' : 'top'] = 'auto';
     return this;
   };
 
@@ -37,9 +50,6 @@
 
     el.innerHTML = message;
     el.appendChild(this.close);
-
-    // first apply
-    if(!el.parentNode || (el.parentNode.nodeName !== 'BODY')) doc.body.appendChild(el);
 
     var top = -this._height();
 
@@ -56,21 +66,21 @@
         self._timeout = timeout && timeout();
         return clearInterval(interval);
       }
-      el.style.top = (top += 1) + 'px';
+      el.style[self.placement] = (top += 1) + 'px';
     }, 3);
 
     return this;
   };
 
   Essage.prototype.hide = function() {
-    var top = +this.el.style.top.slice(0, -2)
+    var top = +this.el.style[this.placement].slice(0, -2)
       , dest = -this._height()
       , self = this
       , interval;
 
     interval = setInterval(function() {
       if(top === dest) return interval && clearInterval(interval);
-      self.el.style.top = (top -= 1) + 'px';
+      self.el.style[self.placement] = (top -= 1) + 'px';
     }, 3);
     return this;
   }

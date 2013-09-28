@@ -40,11 +40,14 @@ Essage.show('hello, im a message.');
 // hide tips
 Essage.hide();
 
-// hide automaticlly after 2000
-Essage.show('message', 2000);
+// message placement
+Essage.setPlacement('bottom');
 
 // change container class
 Essage.setClass('classname');
+
+// hide automaticlly after 2000
+Essage.show('message', 2000);
 
 // chain methods
 Essage.setClass('hello').show('im a message')
@@ -52,7 +55,8 @@ Essage.setClass('hello').show('im a message')
 
 <div id="actions">
   <span id="show">show</span>
-  <span id="auto">show and hide automaticly</span>
+  <span id="auto">show and hide automaticlly</span>
+  <span id="bottom">show at bottom</span>
   <span id="showwithclass">show with new class</span>
   <span id="hide">hide</span>
 </div>
@@ -64,6 +68,7 @@ Essage.setClass('hello').show('im a message')
     , $hide = $('hide')
     , $showwithclass = $('showwithclass')
     , $auto = $('auto')
+    , $bottom = $('bottom');
 
   $show.onclick = function() {
     Essage.show('hello, im a message.');
@@ -73,8 +78,12 @@ Essage.setClass('hello').show('im a message')
     Essage.show('the message will automaticlly disppear after 2 seconds...', 2000);
   };
 
+  $bottom.onclick = function() {
+    Essage.setPlacement('bottom').show('hi, hi, im here');
+  };
+
   $showwithclass.onclick = function() {
-    Essage.setClass('essage-success').show('o:, classname is changed.');
+    Essage.setClass('essage-success').setPlacement().show('o:, classname is changed.');
   };
 
   $hide.onclick = function() {
