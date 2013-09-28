@@ -4,8 +4,19 @@
 ~function(win, doc) {
 
   var Essage = function() {
+    var self = this;
+
     this.el = doc.createElement('div');
     this.el.className = 'essage';
+    this.close = document.createElement('span');
+    this.close.className = 'close';
+    this.close.innerHTML = '&times;'
+
+    this.el.onclick = function(e) {
+      var e = e || win.event
+        , target = e.target || e.srcElement;
+      if(target.className === 'close') self.hide();
+    }
 
     return this;
   };
@@ -25,6 +36,7 @@
       , interval, timeout;
 
     el.innerHTML = message;
+    el.appendChild(this.close);
 
     // first apply
     if(!el.parentNode || (el.parentNode.nodeName !== 'BODY')) doc.body.appendChild(el);
