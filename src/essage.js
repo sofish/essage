@@ -46,6 +46,7 @@
     this.placement = 'top';
 
     doc.body.appendChild(this.el);
+    this.el.top = -this._height();
 
     return this;
   };
