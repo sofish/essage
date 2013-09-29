@@ -4,7 +4,7 @@
 
 -------------------------
 
-- Live demo [http://sofish.github.io/essage/index.html](http://sofish.github.io/essage/index.html)
+- Live demo [http://sofish.github.io/essage/index.html](http://sofish.github.io/essage/)
 - Browser support: tested under IE6+, Firefox, Chrome, Safari, Mobile Safari
 
 -------------------------
